@@ -12,6 +12,8 @@ window.onload = () => {
     var defaultLng = urlParams.get('lng')
     var isDefaultLocation = (!!defaultLat && !!defaultLng);
     // initializing a default location or going to geolocation if available
+    console.log('default:', defaultLat, defaultLng);
+    
     mapService.initMap(defaultLat, defaultLng)
         .then(() => {
             if (isDefaultLocation) renderPosition(defaultLat, defaultLng);
