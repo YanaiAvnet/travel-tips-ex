@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>TravelTip</title>
 </head>
 
@@ -14,19 +15,21 @@
             <h1 class="main-title">Travel Tip</h1>
             <div class="location-tools">
                 <input class="search-input" type="text" placeholder="Enter Location">
-                <button class="go-btn btn">GO</button>
+                <button class="go-btn btn"><i class="fas fa-search"></i></button>
                 <button class="my-location-btn btn">My Location</button>
             </div>
         </div>
     </header>
     <main>
-        <div class="main wrapper flex">
+        <div class="main wrapper grid">
             <div class="location-info flex column">
-                <div class="location-name"></div>
-                <button class="copy-location-btn btn">Copy Location</button>
-                <div class="weather-container"></div>
+                <div class="flex align-center space-between">
+                    <h3 class="location-name"></h3>
+                    <button class="copy-location-btn btn"><i class="far fa-copy"></i></button>
+                </div>
             </div>
             <div class="map" id="map"></div>
+            <div class="weather-container"></div>
         </div>
     </main>
 
