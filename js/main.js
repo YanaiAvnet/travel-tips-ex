@@ -26,7 +26,7 @@ window.onload = () => {
     document.querySelector('.go-btn').addEventListener('click', goToAddress)
 
     //copying location
-    document.querySelector('.go-btn').addEventListener('click', () => onCopyLocation(storageService.getLastLocation()))
+    document.querySelector('.copy-location-btn').addEventListener('click', () => onCopyLocation(storageService.getLastLocation()))
 }
 
 function renderPosition(lat, lng) {
@@ -72,9 +72,9 @@ function goToAddress() {
 }
 
 function onCopyLocation(location) {
-    var queryStr = `/?lat=${location.lat}&lng=${location.lng}`;
+    var queryStr = `https://yanaiavnet.github.io/travel-tips-ex/?lat=${location.lat}&lng=${location.lng}`;
     const el = document.createElement('textarea');
-    el.style.display = 'none';
+    // el.style.display = 'none';
     el.value = queryStr;
     document.body.appendChild(el);
     el.select();
