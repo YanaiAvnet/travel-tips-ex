@@ -1,0 +1,44 @@
+.grid {
+    display: grid;
+}
+
+.wrapper {
+    max-width: 992px;
+}
+
+.main {
+    grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+    height: 100vh;
+}
+
+.main-title {
+    grid-column: 1 / 6;
+}
+
+.search-input {
+    grid-column: 7 / 9;
+}
+
+.go-btn {
+    grid-column: 10 / 11;
+}
+
+.my-location-btn {
+    grid-column: 11 / 12;
+}
+
+.location-name {
+    grid-area: 3 / 1 / 4 / 8;
+}
+
+.copy-location-btn {
+    grid-area: 3 / 10 / 4 / 12;
+}
+
+.weather-container {
+    grid-area: 5 / 1 / 9 / 4;
+}
+
+.map {
+    grid-area: 5 / 6 / 12 / 12;
+}
