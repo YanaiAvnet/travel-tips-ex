@@ -8,8 +8,8 @@ import storageService from './services/storage.service.js'
 
 window.onload = () => {
     var urlParams = new URLSearchParams(window.location.search);
-    var defaultLat = urlParams.get('lat')
-    var defaultLng = urlParams.get('lng')
+    var defaultLat = +urlParams.get('lat')
+    var defaultLng = +urlParams.get('lng')
     var isDefaultLocation = (!!defaultLat && !!defaultLng);
     // initializing a default location or going to geolocation if available
     console.log('default:', defaultLat, defaultLng);
