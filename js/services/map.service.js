@@ -9,8 +9,6 @@ export default {
 
 var map;
 
-window.initMap = initMap
-
 function initMap(lat = 32.0749831, lng = 34.9120554) {
     console.log('InitMap');
     return _connectGoogleApi()
@@ -56,13 +54,15 @@ function _connectGoogleApi() {
 function getGeocodeFromCoords(lat, lng) {
     const API_KEY = 'AIzaSyB-H55Zg3dIlXeloikcy7iq5MGG1D7YGgw';
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${API_KEY}`)
-        .then(res => res.json().then(json => json.results[0].formatted_address))
+        .then(res => res.json())
+        .then(json => json.results[0].formatted_address);
 }
 
 function getCoordsFromGeocode(address) {
     const API_KEY = 'AIzaSyB-H55Zg3dIlXeloikcy7iq5MGG1D7YGgw';
     var addressStr = address.replace('+', ' ')
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${addressStr}&key=${API_KEY}`)
-    .then(res => res.json().then(json => json.results[0]))
+        .then(res => res.json())
+        .then(json => json.results[0])
         // .then(res => res.json().then(json => json.results[0].address_components.map(component => component.short_name).join(', ')))
 }

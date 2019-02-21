@@ -3,9 +3,6 @@ import mapService from './services/map.service.js'
 import weatherService from './services/weather.service.js'
 import storageService from './services/storage.service.js'
 
-// locService.getLocs()
-//     .then(locs => console.log('locs', locs))
-
 window.onload = () => {
     var urlParams = new URLSearchParams(window.location.search);
     var defaultLat = +urlParams.get('lat')
