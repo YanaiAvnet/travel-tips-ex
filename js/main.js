@@ -73,7 +73,7 @@ function goToAddress() {
 function onCopyLocation(location) {
     var queryStr = `https://yanaiavnet.github.io/travel-tips-ex/?lat=${location.lat}&lng=${location.lng}`;
     const el = document.createElement('textarea');
-    // el.style.display = 'none';
+    el.style.display = 'none';
     el.value = queryStr;
     document.body.appendChild(el);
     el.select();

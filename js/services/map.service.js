@@ -55,7 +55,7 @@ function getGeocodeFromCoords(lat, lng) {
     const API_KEY = 'AIzaSyB-H55Zg3dIlXeloikcy7iq5MGG1D7YGgw';
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${API_KEY}`)
         .then(res => res.json())
-        .then(json => json.results[0].formatted_address);
+        .then(geocode => geocode.results[0].formatted_address);
 }
 
 function getCoordsFromGeocode(address) {
@@ -63,6 +63,5 @@ function getCoordsFromGeocode(address) {
     var addressStr = address.replace('+', ' ')
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${addressStr}&key=${API_KEY}`)
         .then(res => res.json())
-        .then(json => json.results[0])
-        // .then(res => res.json().then(json => json.results[0].address_components.map(component => component.short_name).join(', ')))
+        .then(coords => coords.results[0])
 }
